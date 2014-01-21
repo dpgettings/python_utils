@@ -4,7 +4,7 @@ import numpy as np
 # ND Histogram Broken out of Numpy, and then HEAVILY MODIFIED 
 # ############################################################
 def histogram_nd(input_data, input_bin_edges, weights=None, density=False,
-                 hist_dtype=None, return_bin_inds=False):
+                 hist_dtype=np.int32, return_bin_inds=False):
     """
     Compute the multidimensional histogram of some data.
 
@@ -35,10 +35,6 @@ def histogram_nd(input_data, input_bin_edges, weights=None, density=False,
     # ==============================================
     # Setup
     # ==============================================
-    # Check output hist dtype preference
-    if hist_dtype is None:
-        # No Preference -- go with default -- int32
-        hist_dtype = np.int32
 
     # ---------------------------
     # Check Format of Input Data
